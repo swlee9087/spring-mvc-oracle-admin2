@@ -3,10 +3,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>It's alright~</title>
+<title>Insert title here</title>
 </head>
 <body>
 <h1>Hello Spring MVC 시작이다 !</h1> 
-<h4>집에 가즈아~~ </h4>
 </body>
 </html>
