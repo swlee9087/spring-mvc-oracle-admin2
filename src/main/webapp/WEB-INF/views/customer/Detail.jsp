@@ -7,10 +7,9 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <jsp:include page="../common/head.jsp"/>
 <body>
+<h2>Customer Detail</h2>
 
-<h2>Login Form</h2>
-
-<form action="${contextPath}/customer/login" method="post">
+<form action="${contextPath}/customer/detail" method="post">
 
   <div class="container">
     <label for="uname"><b>Username</b></label>
@@ -27,9 +26,7 @@
 
   <div class="container" style="background-color:#f1f1f1">
     <button type="button" class="cancelbtn">Cancel</button>
-    <span class="psw">Forgot <a href="#">password?</a></span>
   </div>
 </form>
-
 </body>
 </html>

@@ -2,16 +2,15 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
-<jsp:include page="../common/head.jsp"/>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
 <body>
+<h2>Customer List</h2>
 
-<h2>Login Form</h2>
-
-<form action="${contextPath}/customer/login" method="post">
-
+<form action="${contextPath}/customer/list" method="get">
+<!-- 
   <div class="container">
     <label for="uname"><b>Username</b></label>
     <input type="text" placeholder="Enter Username" name="uname" required>
@@ -28,8 +27,7 @@
   <div class="container" style="background-color:#f1f1f1">
     <button type="button" class="cancelbtn">Cancel</button>
     <span class="psw">Forgot <a href="#">password?</a></span>
-  </div>
+  </div> -->
 </form>
-
 </body>
 </html>

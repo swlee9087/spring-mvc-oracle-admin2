@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+	<typeAliases>
+		<typeAlias type="shop.cofin.oracle.book.domain.BookDTO" alias="book"/>
+		<typeAlias type="shop.cofin.oracle.customer.domain.CustomerDTO" alias="customer"/>
+		<typeAlias type="shop.cofin.oracle.order.domain.OrderDTO" alias="order"/>
+		<typeAlias type="shop.cofin.oracle.publisher.domain.PublisherDTO" alias="publisher"/>
+	</typeAliases>
+
+</configuration>

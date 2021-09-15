@@ -25,12 +25,14 @@
 </ul></table></fieldset></div>
 <div><fieldset><legend><h4>/publishers  -> shows list in console. </h4></legend><table>
 <ul>
-		<li>/publishers  -> shows list in console. </li>		
+		<li><a href="./publishers">/publishers</a>  -> shows list in console. </li>		
 </ul></table></fieldset></div>
 <div><fieldset><legend><h4>join + login </h4></legend><table>
 <ul>
-		<li><a href="./joinform">/joinform</a></li>
-		<li><a href="./loginform">/loginform</a></li>		
+		<li><a href="./joinform">/join form</a></li>
+		<li><a href="./loginform">/login form</a></li>		
+		<li><a href="./updateform">/update form</a></li>
+		<li><a href="./detailform">/detail form</a></li>
 </ul></table></fieldset></div>
 <div><fieldset><legend><h4>new book </h4></legend><table>
 <ul>

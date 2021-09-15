@@ -8,18 +8,25 @@
 <jsp:include page="../common/head.jsp"/>
 <body>
 
-<h2>Login Form</h2>
+<h2>Register Form</h2>
 
-<form action="${contextPath}/customer/login" method="post">
+<form action="${contextPath}/customer/join" method="get">
+
 
   <div class="container">
-    <label for="uname"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="uname" required>
+  	<label for="custId"><b>customer id</b></label>
+    <input type="text" placeholder="Enter ID" name="custId" required>
+    
+    <label for="custName"><b>customer name</b></label>
+    <input type="text" placeholder="Enter Username" name="custName" required>
 
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
+    <label for="address"><b>address</b></label>
+    <input type="text" placeholder="Enter Address" name="address" required>
         
-    <button type="submit">Login</button>
+    <label for="phone"><b>phone</b></label>
+    <input type="text" placeholder="Enter phone" name="phone" required>     
+        
+    <button type="submit">Join</button>
     <label>
       <input type="checkbox" checked="checked" name="remember"> Remember me
     </label>

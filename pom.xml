@@ -186,12 +186,12 @@ xsi:schemaLocation="https://maven.apache.org/POM/4.0.0 https://maven.apache.org/
 			<artifactId>jackson-databind</artifactId>
 			<version>${jackson-version}</version>
 		</dependency>
-<!-- 		<dependency>
+		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
 			<version>${jackson-version}</version>
 		</dependency>
- -->		<dependency>
+		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-annotations</artifactId>
 			<version>${jackson-version}</version>
@@ -342,8 +342,8 @@ xsi:schemaLocation="https://maven.apache.org/POM/4.0.0 https://maven.apache.org/
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.0</version>
                 <configuration>
-                    <source>${java.version}</source>
-                    <target>${java.version}</target>
+                    <source>${java-version}</source>
+                    <target>${java-version}</target>
                     <compilerArgument>-Xlint:all</compilerArgument>
                     <showWarnings>true</showWarnings>
                     <showDeprecation>true</showDeprecation>
