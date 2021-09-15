@@ -10,11 +10,14 @@ import shop.cofin.oracle.common.GenericInterface;
 @Repository
 public interface BookMapper extends GenericInterface<BookDTO,Integer>{
 	
-	 //public List<BookDTO> findAll();  
-	 //public BookDTO findById(int bookId); 
+//	 public List<BookDTO> findAll();  
+//	 public BookDTO findById(int bookId); 
+//	 void save(BookDTO book);
+//	 void update(BookDTO book);
+//	 void delete(int orderId); 
+	 
+
 	 public	BookDTO findByPubId(int pubId); 
 	 public BookDTO findByBookTitle(String bookTitle); 
 	 public BookDTO findByPrice(int price); 
-	 //public void save(BookDTO book);
-	 
 }

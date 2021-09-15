@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 @SessionAttributes("contextPath")
 @Controller
 public class HomeController {
-	
+		
 	@RequestMapping(value="/", method=RequestMethod.GET)
 	public String home(
 			HttpSession session,
@@ -27,59 +27,81 @@ public class HomeController {
 	
 	
 	/* customers */
-	@RequestMapping(value="/customers", method = RequestMethod.GET)
+	@RequestMapping(value="/customers", method = {RequestMethod.GET})
 	public String customers() {
-		return "/customer/List";
+		return "customer/List";
 	}
-	@RequestMapping(value = "/join", method = RequestMethod.GET)
+	@RequestMapping(value = "customer/register", method = {RequestMethod.GET})
 	public String join() {
-		return "customer/Join";
+		return "customer/Register";
 	}
-	@RequestMapping(value="/login", method=RequestMethod.GET)
+	@RequestMapping(value="customer/login", method= {RequestMethod.GET})
 	public String login() {
 		return "customer/Login";
 	}
-	@RequestMapping(value="/update", method=RequestMethod.GET)
+	@RequestMapping(value="customer/update", method= {RequestMethod.GET})
 	public String customerUpdate() {
-		return "/customer/Update";
+		return "customer/Update";
 	}
-	@RequestMapping(value="/detail", method=RequestMethod.GET)
+	@RequestMapping(value="customer/detail", method= {RequestMethod.GET})
 	public String customerDetail() {
-		return "/customer/Detail";
+		return "customer/Detail";
 	}
+	
 	
 	/* books */
-	@RequestMapping(value="/books", method = RequestMethod.GET)
+	@RequestMapping(value="/books", method = {RequestMethod.GET})
 	public String books() {
-		return "/book/List";
+		return "book/List";
 	}
-	@RequestMapping(value="/add", method=RequestMethod.GET)
+	@RequestMapping(value="book/add", method = {RequestMethod.GET})
 	public String addBook() {
-		return "book/Add";
+		return "book/Register";
 	}
-	@RequestMapping(value="/detail", method=RequestMethod.GET)
+	@RequestMapping(value="book/update", method= {RequestMethod.GET})
+	public String updateBook() {
+		return "book/Update";
+	}
+	@RequestMapping(value="book/detail",method = {RequestMethod.GET})
 	public String bookDetail() {
-		return
+		return "book/Detail";
 	}
 	
+	
 	/* orders */
-	@RequestMapping(value="/orders", method = RequestMethod.GET)
+	@RequestMapping(value="/orders", method = {RequestMethod.GET})
 	public String orders() {
-		return "/orders";
+		return "order/List";
 	}
-	@RequestMapping(value="/neworder", method=RequestMethod.GET)
-	public String newOrder() {
-		return "order/NewOrder";
+	@RequestMapping(value="order/add", method = {RequestMethod.GET})
+	public String addOrder() {
+		return "order/Register";
+	}
+	@RequestMapping(value="order/update", method= {RequestMethod.GET})
+	public String updateOrder() {
+		return "order/Update";
+	}
+	@RequestMapping(value="order/detail", method= {RequestMethod.GET})
+	public String orderDetail() {
+		return "order/Detail";
 	}
 
 	/* publishers */	
-	@RequestMapping(value="/publishers", method = RequestMethod.GET)
+	@RequestMapping(value="/publishers",method = {RequestMethod.GET})
 	public String publishers() {
-		return "/publishers";
+		return "publisher/List";
 	}
-	@RequestMapping(value="/newpublisher", method=RequestMethod.GET)
-	public String newPublisher() {
-		return "publisher/NewPublisher";
+	@RequestMapping(value="publisher/add", method = {RequestMethod.GET})
+	public String addPublisher() {
+		return "publisher/Register";
+	}
+	@RequestMapping(value="publisher/update", method= {RequestMethod.GET})
+	public String updatePublisher() {
+		return "publisher/Update";
+	}
+	@RequestMapping(value="publisher/detail", method= {RequestMethod.GET})
+	public String publisherDetail() {
+		return "publisher/Detail";
 	}
 		
 }

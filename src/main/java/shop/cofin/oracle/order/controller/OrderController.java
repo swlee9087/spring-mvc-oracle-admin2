@@ -4,55 +4,81 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-//import shop.cofin.oracle.common.GenericInterface;
 import shop.cofin.oracle.order.domain.OrderDTO;
 import shop.cofin.oracle.order.service.OrderService;
 
-@Controller 
+//import shop.cofin.oracle.common.GenericInterface;
+
+@Controller @RequestMapping("/orders")
 public class OrderController{
 	@Autowired OrderService orderService;
 	@Autowired OrderDTO order;
+	
 	@RequestMapping("/list")
-	public List<OrderDTO> findAll() {
-		return orderService.findAll();
+	public void findAll() {
+		List<OrderDTO> orders=orderService.findAll();
+		for (OrderDTO order : orders) {
+			System.out.println(order.toString());
+		}
 	}
-	@RequestMapping("/find/{orderId}")
-	public OrderDTO findById(int orderId) {
+	@RequestMapping(value="/detail", method= {RequestMethod.GET})
+	public OrderDTO findById(@PathVariable("orderId")int orderId) {
 		return orderService.findByOrderId(orderId);
 	}
 	@RequestMapping(value="/update", method=RequestMethod.POST)
-	public void update(OrderDTO order) {
+	public String update(OrderDTO order) {
 		orderService.update(order);
+		return " Updated.";
 	}
-	@RequestMapping(value="/delte/{orderId}", method=RequestMethod.POST)
-	public void delete(int orderId) {
-		orderService.delete(orderId);		
+	@RequestMapping(value="/delete/{orderId}", method=RequestMethod.POST)
+	public String delete(int orderId) {
+		orderService.delete(orderId);	
+		return "Deleted.";
 	}
 	@RequestMapping(value="/save", method=RequestMethod.POST)
-	public void save(OrderDTO order) {
+	public String save(OrderDTO order) {
 		orderService.save(order);		
+		return " Saved!";
 	}
-		
-	
-	
-	
+	@RequestMapping (value="/findByCustId/{custId}", method=RequestMethod.GET)
+	public void findByCustId(@PathVariable("custId")int custId) {
+		orderService.findByCustId(custId);
+		System.out.print(custId);
+	}
+	@RequestMapping(value="/findByBookId/{bookId}", method=RequestMethod.GET)
+	public void findByBookId(@PathVariable("bookId")int bookId) {
+		orderService.findByBookId(bookId);
+		System.out.print(bookId);
+	}
+	@RequestMapping(value="/findByOrderPrice/{orderPrice}", method=RequestMethod.GET)
+	public void findByOrderPrice(@PathVariable("orderPrice")int orderPrice) {
+		orderService.findByOrderPrice(orderPrice);
+		System.out.print(orderPrice);
+	}
+	@RequestMapping(value="/findByOrderDate/{orderDate}",method=RequestMethod.GET)
+	public void findByOrderDate(@PathVariable("orderDate")String orderDate) {
+		orderService.findByOrderDate(orderDate);
+		System.out.print(orderDate);
+	}
+
 	
 	/*
 	 * @RequestMapping (value="/order/new", method= {RequestMethod.GET}) public
 	 * String newOrder(
 	 * 
-	 * @RequestParam("orderId") int orderId,
+	 * @PathVariable("orderId") int orderId,
 	 * 
-	 * @RequestParam("custId") int custId,
+	 * @PathVariable("custId") int custId,
 	 * 
-	 * @RequestParam("bookId") int bookId,
+	 * @PathVariable("bookId") int bookId,
 	 * 
-	 * @RequestParam("orderPrice") int orderPrice,
+	 * @PathVariable("orderPrice") int orderPrice,
 	 * 
-	 * @RequestParam("orderDate") String orderDate ) {
+	 * @PathVariable("orderDate") String orderDate ) {
 	 * System.out.println("orderId: "+orderId);
 	 * System.out.println("custId: "+custId); System.out.println("bookId: "+bookId);
 	 * System.out.println("orderPrice: "+orderPrice);

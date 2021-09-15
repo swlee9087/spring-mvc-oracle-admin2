@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
@@ -9,7 +7,7 @@
 <body>
 <h2>Order Detail</h2>
 
-<form action="${contextPath}/orders" method="post">
+<form action="${contextPath}/orders" method="get">
 
   <div class="container">
   	<label for="orderId"><b>order id</b></label>

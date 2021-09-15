@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
@@ -9,14 +7,20 @@
 <body>
 <h2>Customer Detail</h2>
 
-<form action="${contextPath}/customer/detail" method="post">
+<form action="${contextPath}/customers" method="get">
 
   <div class="container">
-    <label for="uname"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="uname" required>
+    <label for="custId"><b>custId</b></label>
+    <input type="text" placeholder="Enter custId" name="custId" required>
 
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
+    <label for="custName"><b>name</b></label>
+    <input type="text" placeholder="Enter custname" name="custName" required>
+        
+    <label for="address"><b>address</b></label>
+    <input type="text" placeholder="Enter " name="address" required>
+    
+    <label for="phone"><b>phone</b></label>
+    <input type="text" placeholder="Enter " name="phone" required>
         
     <button type="submit">Login</button>
     <label>

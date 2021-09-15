@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="shop.cofin.oracle.mappers.CustomerMapper">
 	
-	<insert id="save" parameterType="string">
+	<insert id="save" parameterType="customer">
 		insert into 
 		customers (cust_id, cust_name, address, phone) 
 		values (${custId},#{custName},#{address},#{phone})
@@ -15,8 +15,7 @@
 			phone
 		from customers
 	</select>
-	<select id="findById" resultType="customer"
-	parameterType="int">
+	<select id="findById" resultType="customer"	parameterType="int">
 		select
 			cust_id custId,
 			cust_name custName,
@@ -38,8 +37,7 @@
 		where order_id like ${orderId}
 	</delete>
 		
-	<select id="findByCustName" resultType="customer"
-	parameterType="string">
+	<select id="findByCustName" resultType="customer" 	parameterType="string">
 	select
             cust_id customerId,
             cust_name customerName,
@@ -48,8 +46,7 @@
       from customers
       where cust_name like '%'|| #{value} ||'%'
 	</select>
-	<select id="findByAddress" resultType="customer"
-	parameterType="string">
+	<select id="findByAddress" resultType="customer"	parameterType="string">
 	select
             cust_id customerId,
             cust_name customerName,
@@ -58,8 +55,7 @@
       from customers
       where address like '%'|| #{value} ||'%'
 	</select>
-	<select id="findByPhone" resultType="customer"
-	parameterType="string">
+	<select id="findByPhone" resultType="customer"	parameterType="string">
 	select
             cust_id customerId,
             cust_name customerName,

@@ -10,11 +10,15 @@ import shop.cofin.oracle.publisher.domain.PublisherDTO;
 @Repository
 public interface PublisherMapper extends GenericInterface<PublisherDTO,Integer>{
 	
-	//public List<PublisherDTO> findAll(); 
-	//public PublisherDTO findByPubId(int pubId);
+//	public List<PublisherDTO> findAll(); 
+//	public PublisherDTO findByPubId(int pubId);
+//	void save(PublisherDTO publisher);	
+//	void update(PublisherDTO publisher);
+//	void delete(int pubId);
+	
 	public PublisherDTO findByPubName(String pubName);
 	public PublisherDTO findByMgrName(String mgrName);
 	public PublisherDTO findByPhone(String phone);
-	//public void save(PublisherDTO publisher);
+
 	
 }

@@ -3,48 +3,36 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>BookStore with eGovEclipse</title>
 </head>
 <body>
-<h1>Hello Spring MVC 시작이다 !</h1> 
+<h1>@09151600 - server linking left</h1> 
 
-<div><fieldset><legend><h4>/books  -> shows list in console. </h4></legend><table>
-<ul>	<li>/books/bookId/{bookId}</li>
-		<li>/books/pubId/{pubId}</li>
-		<li>/books/bookTitle/{bookTitle}</li>
-		<li>/books/price/{price}</li>
-</ul></table></fieldset></div>
-<div><fieldset><legend><h4>/customers  -> shows list in console. </h4></legend><table>
+
+<div><fieldset><legend><h4><a href="./customers">/customers</a>  -> shows list in console. </h4></legend><table>
 <ul>
-		<li>/customers  -> shows list in console. </li>		
+		<li><a href="./customer/register">Register</a></li>		
+		<li><a href="./customer/login">Login</a></li>		
+		<li><a href="./customer/update">Update</a></li>		
+		<li><a href="./customer/detail">Detail</a></li>		
 </ul></table></fieldset></div>
-<div><fieldset><legend><h4>/orders  -> shows list in console. </h4></legend><table>
-<ul>
-		<li>/orders  -> shows list in console. </li>
-		<li>ordermapper.xml not finished @0910PM17</li>
+<div><fieldset><legend><h4><a href="./books">/books</a>  -> shows list in console. </h4></legend><table>
+<ul>		
+		<li><a href="./book/add">Register</a></li>		
+		<li><a href="./book/update">Update</a></li>		
+		<li><a href="./book/detail">Detail</a></li>	
 </ul></table></fieldset></div>
-<div><fieldset><legend><h4>/publishers  -> shows list in console. </h4></legend><table>
+<div><fieldset><legend><h4><a href="./publishers">/publishers</a>  -> shows list in console. </h4></legend><table>
 <ul>
-		<li><a href="./publishers">/publishers</a>  -> shows list in console. </li>		
+		<li><a href="./publisher/add">Register</a></li>		
+		<li><a href="./publisher/update">Update</a></li>		
+		<li><a href="./publisher/detail">Detail</a></li>					
 </ul></table></fieldset></div>
-<div><fieldset><legend><h4>join + login </h4></legend><table>
+<div><fieldset><legend><h4><a href="./orders">/orders</a>  -> shows list in console. </h4></legend><table>
 <ul>
-		<li><a href="./joinform">/join form</a></li>
-		<li><a href="./loginform">/login form</a></li>		
-		<li><a href="./updateform">/update form</a></li>
-		<li><a href="./detailform">/detail form</a></li>
-</ul></table></fieldset></div>
-<div><fieldset><legend><h4>new book </h4></legend><table>
-<ul>
-		<li><a href="./newbook">/newbook</a></li>		
-</ul></table></fieldset></div>
-<div><fieldset><legend><h4>new order </h4></legend><table>
-<ul>
-		<li><a href="./neworder">/neworder</a></li>		
-</ul></table></fieldset></div>
-<div><fieldset><legend><h4>new publisher </h4></legend><table>
-<ul>
-		<li><a href="./newpublisher">/newpublisher</a></li>		
+		<li><a href="./order/add">Register</a></li>		
+		<li><a href="./order/update">Update</a></li>		
+		<li><a href="./order/detail">Detail</a></li>	
 </ul></table></fieldset></div>
 </body>
 </html>

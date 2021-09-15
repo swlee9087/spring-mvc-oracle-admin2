@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="shop.cofin.oracle.mappers.BookMapper">
-	<insert id="save" parameterType="string">
+	<insert id="save" parameterType="book">
 		insert into
 		books (book_id, book_title, price, pub_id)
 		values (${bookId},#{bookTitle},${price},${pubId})
@@ -35,8 +35,7 @@
 		where book_id like ${value}
 	</delete>
 	
-	<select id="findByPubId" resultType="book" 
-	parameterType="int">
+	<select id="findByPubId" resultType="book" 	parameterType="int">
 		select 
             book_id bookId,
             book_title bookTitle,
@@ -45,8 +44,7 @@
     	from books
     	where pub_id like ${pubId}
 	</select>
-	<select id="findByBookTitle" resultType="book" 
-	parameterType="string">
+	<select id="findByBookTitle" resultType="book" 	parameterType="string">
 		select 
             book_id bookId,
             book_title bookTitle,
@@ -55,8 +53,7 @@
     	from books
     	where book_title like '%'|| #{value} ||'%'
 	</select>
-	<select id="findByPrice" resultType="book" 
-	parameterType="int">
+	<select id="findByPrice" resultType="book" 	parameterType="int">
 		select 
             book_id bookId,
             book_title bookTitle,

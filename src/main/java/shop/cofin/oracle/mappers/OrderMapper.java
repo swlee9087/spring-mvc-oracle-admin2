@@ -9,11 +9,15 @@ import shop.cofin.oracle.order.domain.OrderDTO;
 
 @Repository
 public interface OrderMapper extends GenericInterface<OrderDTO,Integer>{
-	//public List<OrderDTO> findAll();
-	//public OrderDTO findByOrderId(int orderId);
+//	public List<OrderDTO> findAll();
+//	public OrderDTO findByOrderId(int orderId);
+//	void save(OrderDTO order);
+//	void update(OrderDTO order);
+//	void delete(int orderId);
+	
 	public OrderDTO findByCustId(int custId);
 	public OrderDTO findByBookId(int bookId);
 	public OrderDTO findByOrderPrice(int orderPrice);
 	public OrderDTO findByOrderDate(String orderDate);
-	//void save(OrderDTO order);
+	
 }
