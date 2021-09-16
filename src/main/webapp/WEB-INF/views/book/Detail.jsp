@@ -6,21 +6,19 @@
 <body>
 <h2>Book Detail</h2>
 
-<form action="${contextPath}/books/find" method="get">
+<form action="${ctx}/book/find" method="get">
   <div class="container">
   	<label for="bookId"><b>book id</b></label>
     <input type="text" placeholder="Enter book ID" name="bookId" required>
-    <!-- 
-    <label for="bookTitle"><b>book title</b></label>
-    <input type="text" placeholder="Enter Book Title" name="bookTitle" required>
-
-    <label for="price"><b>price</b></label>
-    <input type="text" placeholder="Enter price" name="price" required>
-        
-    <label for="pubId"><b>publisher ID</b></label>
-    <input type="text" placeholder="Enter publisher id" name="pubId" required>    -->  
-        
-    <button type="submit">Submit</button>
+    <label for="pubId"><b>pub id</b></label>
+    <input type="text" placeholder="Enter /" name="pubId" >
+    <label for="bookId"><b>book id</b></label>
+    <input type="text" placeholder="Enter book ID" name="bookId" >
+    <label for="bookId"><b>book id</b></label>
+    <input type="text" placeholder="Enter book ID" name="bookId" >
+    
+       
+    <a href="${ctx}/move/book/find/**"><button type="submit">Submit</button></a>
   </div>
   <div class="container" style="background-color:#f1f1f1">
     <a href="${ctx}/move/home/intro"><button type="button" class="cancelbtn">Cancel</button></a>

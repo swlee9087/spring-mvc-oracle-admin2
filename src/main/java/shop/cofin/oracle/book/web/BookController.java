@@ -19,15 +19,15 @@ import shop.cofin.oracle.book.model.BookService;
 public class BookController{
 
 	@Autowired	BookService bookService;
-	@Autowired	BookDTO book;
+//	@Autowired	BookDTO book;
 	
 	@RequestMapping("/list")
-	public List<BookDTO> findAll() {
+	public String findAll() {
 		List<BookDTO> books= bookService.findAll();
 		for(BookDTO book : books) {
 			System.out.println(book.toString());
 		}
-		return bookService.findAll();
+		return "redirect:/move/book/list";
 	}
 	@RequestMapping("/find/{bookId}")
 	public String findById(@PathVariable("bookid")int bookId) {
@@ -38,7 +38,7 @@ public class BookController{
 	@RequestMapping(value="/update", method=RequestMethod.POST)
 	public String update(BookDTO book) {
 		bookService.update(book);
-		return "redirect:/move/home/intro";
+		return "redirect:/move/book/list";
 	}
 	@RequestMapping(value="/delete/{bookId}", method=RequestMethod.POST)
 	public String delete(int bookId) {
@@ -46,16 +46,15 @@ public class BookController{
 		return "redirect:/move/book/list";
 	}
 	@RequestMapping(value="/save", method=RequestMethod.POST)
-	public String save(BookDTO book) {
+	public void save(BookDTO book) {
 		bookService.save(book);
-		return "redirect:/move/book/List";
+//		return "redirect:/move/book/List";
 		
 	}
 	@RequestMapping(value="/findByPubId/{pubId}", method=RequestMethod.GET)
 	public void findByPubId(@PathVariable("pubId") int pubId) {
 		bookService.findByPubId(pubId);
 		System.out.println(pubId+" Found.");
-		
 	}
 	
 	@RequestMapping(value="/findByBookTitle/{bookTitle}", method=RequestMethod.GET)

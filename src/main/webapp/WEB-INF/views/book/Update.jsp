@@ -8,7 +8,7 @@
 <body>
 <h2>Book Update</h2>
 
-<form action="${contextPath}/books/update" method="post">
+<form action="${ctx}/book/update" method="post">
 
 <div class="container">
   	<label for="bookId"><b>book id</b></label>

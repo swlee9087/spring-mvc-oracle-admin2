@@ -5,68 +5,60 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import shop.cofin.oracle.common.mapper.CustomerMapper;
+
 @Service
 public class CustomerServiceImpl implements CustomerService{
 	@Autowired CustomerMapper mapper;
 
 	@Override
 	public CustomerDTO findById(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
+		return mapper.findById(id);
 	}
 
 	@Override
 	public void delete(Integer id) {
-		// TODO Auto-generated method stub
-		
+		mapper.delete(id);
 	}
 
 	@Override
 	public List<CustomerDTO> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+		return mapper.findAll();
 	}
 
 	@Override
 	public CustomerDTO findById(int custId) {
-		// TODO Auto-generated method stub
-		return null;
+		return mapper.findById(custId);
 	}
 
 	@Override
 	public void save(CustomerDTO customer) {
-		// TODO Auto-generated method stub
-		
+		mapper.save(customer);
 	}
 
 	@Override
 	public void update(CustomerDTO customer) {
-		// TODO Auto-generated method stub
-		
+		mapper.update(customer);
 	}
 
 	@Override
 	public void delete(int custId) {
-		// TODO Auto-generated method stub
-		
+		mapper.delete(custId);
 	}
 
 	@Override
 	public CustomerDTO findByCustName(String custName) {
-		// TODO Auto-generated method stub
-		return null;
+		return mapper.findByCustName(custName);
 	}
 
 	@Override
 	public CustomerDTO findByAddress(String address) {
-		// TODO Auto-generated method stub
-		return null;
+		return mapper.findByAddress(address);
 	}
 
 	@Override
 	public CustomerDTO findByPhone(String phone) {
-		// TODO Auto-generated method stub
-		return null;
+		return mapper.findByPhone(phone);
 	}
 
 	/*

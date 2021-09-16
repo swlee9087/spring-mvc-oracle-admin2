@@ -4,6 +4,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import shop.cofin.oracle.common.mapper.BookMapper;
+
 @Service 
 public class BookServiceImpl implements BookService{
 	@Autowired BookMapper mapper;
@@ -14,7 +16,7 @@ public class BookServiceImpl implements BookService{
 	}
 
 	@Override
-	public BookDTO findById(int bookId) {
+	public BookDTO findById(Integer bookId) {
 		return mapper.findById(bookId);
 	}
 
@@ -22,17 +24,19 @@ public class BookServiceImpl implements BookService{
 	public void save(BookDTO book) {
 		mapper.save(book);
 	}
-
 	@Override
 	public void update(BookDTO book) {
 		mapper.update(book);
 	}
-
+//	@Override
+//	public void delete(int bookId) {
+//		mapper.delete(bookId);
+//	}
 	@Override
-	public void delete(int bookId) {
+	public void delete(Integer bookId) {
 		mapper.delete(bookId);
 	}
-
+	
 	@Override
 	public BookDTO findByPubId(int pubId) {
 		return mapper.findByPubId(pubId);
@@ -48,15 +52,8 @@ public class BookServiceImpl implements BookService{
 		return mapper.findByPrice(price);
 	}
 
-	@Override
-	public BookDTO findById(Integer id) {
-		return mapper.findById(id);
-	}
 
-	@Override
-	public void delete(Integer id) {
-		mapper.delete(id);;
-	}
+	
 	
 	
 	

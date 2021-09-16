@@ -1,10 +1,11 @@
-package shop.cofin.oracle.publisher.model;
+package shop.cofin.oracle.common.mapper;
 
 //import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
 import shop.cofin.oracle.common.GenericInterface;
+import shop.cofin.oracle.publisher.model.PublisherDTO;
 
 @Repository
 public interface PublisherMapper extends GenericInterface<PublisherDTO,Integer>{

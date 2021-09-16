@@ -15,7 +15,7 @@
             order_date orderDate
       	from orders
 	</select>
-	<select id="findByOrderId" resultType="order" parameterType="int">
+	<select id="findById" resultType="order" parameterType="int">
 		select
             order_id orderId,
             cust_id custId,

@@ -1,0 +1,131 @@
+/*
+	 * @RequestMapping(value = "/book/new", method = { RequestMethod.GET }) 
+	 * public String newbook(@RequestParam("bookId") int bookId, @RequestParam("bookTitle")
+	 * String bookTitle,@RequestParam("price") int price, @RequestParam("pubId") int pubId) {
+	 * System.out.println("bookId: " + bookId); 
+	 * System.out.println("bookTitle: " +	 * bookTitle); System.out.println("price: " + price);
+	 * System.out.println("pubId: " + pubId); book = new BookDTO();
+	 * book.setBookId(bookId); book.setBookTitle(bookTitle); book.setPrice(price);
+	 * book.setPubId(pubId); bookService.save(book); return "New Book Saved!"; }
+ 	 * @RequestMapping("/books") public void findAll() { List<BookDTO> books =
+	 * bookService.findAll(); for(BookDTO book : books) {
+	 * System.out.println(book.toString()); } }
+	 * @RequestMapping("/books/bookId/{bookId}") public void findById (@PathVariable
+	 * int bookId) { BookDTO books = bookService.findById(bookId);
+	 * System.out.println(books.toString()); }
+	 * 
+	 * @RequestMapping("/books/pubId/{pubId}") public void findByPubId
+	 * (@PathVariable int pubId) { BookDTO books = bookService.findByPubId(pubId);
+	 * System.out.println(books.toString()); }
+	 * 
+	 * @RequestMapping("/books/bookTitle/{bookTitle}") public void findByBookTitle
+	 * (@PathVariable String bookTitle) { BookDTO books =
+	 * bookService.findByBookTitle(bookTitle); System.out.println(books.toString());
+	 * }
+	 * 
+	 * @RequestMapping("/books/price/{price}") public void findByPrice
+	 * (@PathVariable int price) { BookDTO books = bookService.findByPrice(price);
+	 * System.out.println(books.toString()); }
+	 *
+	 * @RequestMapping() public List<BookDTO> findAll(){ return
+	 * bookService.findAll(); }
+	 * 
+	 * @RequestMapping("") public BookDTO findById(int bookId) { return
+	 * bookService.findById(bookId); }
+	 * 
+	 * @RequestMapping(value="/", method = RequestMethod.PUT) public void
+	 * update(@RequestBody BookDTO book) { bookService.update(book); }
+	 * 
+	 * @RequestMapping(value = "/{id}", method=RequestMethod.DELETE) public String
+	 * delete(String id) { return null; }
+	 * 
+	 * @RequestMapping(value = "/") public void save(BookDTO t) {
+	 * bookService.save(t); }
+	 * 
+	 * 
+	 * public BookDTO findById(Integer id) { return null; }
+	 * 
+	 * 
+	 * public void delete(Integer id) {
+	 * 
+	 * }
+	 */
+
+ implements GenericInterface<BookDTO, Integer>
+
+======
+
+@Override
+ 	public List <BookDTO> findAll(){		
+		return mapper.findAll();
+	}
+	@Override
+ 	public BookDTO findById(int bookId){		
+		return mapper.findById(bookId);
+	}
+	@Override
+ 	public BookDTO findByPubId(int pubId){		
+		return mapper.findByPubId(pubId);
+	}
+	@Override
+ 	public BookDTO findByBookTitle(String bookTitle){		
+		return mapper.findByBookTitle(bookTitle);
+	}
+	@Override
+ 	public BookDTO findByPrice(int price){		
+		return mapper.findByPrice(price);
+	}
+	@Override
+	public void save(BookDTO book) {
+		mapper.save(book);
+		
+	}
+
+
+===============
+@RequestMapping(value="/publisher/new", method= {RequestMethod.GET})
+	public String addPub(
+			@RequestParam("pubId") int pubId,
+			@RequestParam("pubName") String pubName,
+			@RequestParam("mgrName") String mgrName,
+			@RequestParam("phone") String phone			) {
+		System.out.println("pubId: "+pubId);
+		System.out.println("pubName: "+pubName);
+		System.out.println("mgrName: "+mgrName);
+		System.out.println("phone: "+phone);
+		publisher=new PublisherDTO();
+		publisher.setPubId(pubId);
+		publisher.setPubName(pubName);
+		publisher.setMgrName(mgrName);
+		publisher.setPhone(phone);
+		publisherService.save(publisher);
+		return "New Publisher Added!";
+	}
+	
+
+=============
+@RequestMapping("/")
+
+<select id="findAll" resultType="publisher" >
+		select
+			pub_id pubId,
+			pub_name pubName,
+			mgr_name mgrName,
+			phone
+		from publishers
+	</select>
+	<select id="findById" resultType="string" parameterType="string"></select>
+		select
+			pub_id pubId,
+			pub_name pubName,
+			mgr_name mgrName,
+			phone
+		from publishers
+		where pub_id like ${pubId}
+
+
+
+===================
+    <a href="${ctx}/move/home/intro"><button type="button" class="cancelbtn">Cancel</button></a>
+
+	<form action="${ctx}/customers/update" method="post">

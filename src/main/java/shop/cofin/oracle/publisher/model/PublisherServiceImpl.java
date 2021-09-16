@@ -5,6 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import shop.cofin.oracle.common.mapper.PublisherMapper;
+
 @Service
 public class PublisherServiceImpl implements PublisherService{
 	@Autowired PublisherMapper publisherMapper;
