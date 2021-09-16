@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="shop.cofin.oracle.customer.model.CustomerMapper">
+	
+	<insert id="save" parameterType="string">
+		insert into 
+		customers (cust_id, cust_name, address, phone) 
+		values (${custId},#{custName},#{address},#{phone})
+	</insert>	
+	<select id="findAll" resultType="customer">
+		select
+			cust_id custId,
+			cust_name custName,
+			address,
+			phone
+		from customers
+	</select>
+	<select id="findById" resultType="customer"	parameterType="int">
+		select
+			cust_id custId,
+			cust_name custName,
+			address,
+			phone
+		from customers
+		where cust_id like ${custId}
+	</select>
+	<update id="update" parameterType="customer">
+		update orders set
+			cust_id=${custId},
+			cust_name=#{custName},
+			address,
+			phone
+		where order_id like ${orderId}
+	</update>
+	<delete id="delete" parameterType="customer">
+		delete from orders
+		where order_id like ${orderId}
+	</delete>
+		
+	<select id="findByCustName" resultType="customer" 	parameterType="string">
+	select
+            cust_id customerId,
+            cust_name customerName,
+            address,
+            phone
+      from customers
+      where cust_name like '%'|| #{value} ||'%'
+	</select>
+	<select id="findByAddress" resultType="customer"	parameterType="string">
+	select
+            cust_id customerId,
+            cust_name customerName,
+            address,
+            phone
+      from customers
+      where address like '%'|| #{value} ||'%'
+	</select>
+	<select id="findByPhone" resultType="customer"	parameterType="string">
+	select
+            cust_id customerId,
+            cust_name customerName,
+            address,
+            phone
+      from customers
+      where phone like '%'|| #{value} ||'%'
+	</select>
+</mapper>

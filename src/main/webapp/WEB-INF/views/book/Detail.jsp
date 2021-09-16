@@ -1,17 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<c:set var="ctx" value="<%=application.getContextPath()%>"/>
 <jsp:include page="../common/head.jsp"/>
 <body>
 <h2>Book Detail</h2>
 
-<form action="${contextPath}/books" method="get">
+<form action="${contextPath}/books/find" method="get">
   <div class="container">
   	<label for="bookId"><b>book id</b></label>
     <input type="text" placeholder="Enter book ID" name="bookId" required>
-    
+    <!-- 
     <label for="bookTitle"><b>book title</b></label>
     <input type="text" placeholder="Enter Book Title" name="bookTitle" required>
 
@@ -19,12 +18,12 @@
     <input type="text" placeholder="Enter price" name="price" required>
         
     <label for="pubId"><b>publisher ID</b></label>
-    <input type="text" placeholder="Enter publisher id" name="pubId" required>     
+    <input type="text" placeholder="Enter publisher id" name="pubId" required>    -->  
         
     <button type="submit">Submit</button>
   </div>
   <div class="container" style="background-color:#f1f1f1">
-    <button type="button" class="cancelbtn">Cancel</button> 
+    <a href="${ctx}/move/home/intro"><button type="button" class="cancelbtn">Cancel</button></a>
   </div>
 </form>
 </body>
